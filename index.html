@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+   <head>
+      <link href="main.css" rel="stylesheet"  />
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+     <script src="http://sdks.shopifycdn.com/buy-button/0.9.1/buybutton.js"></script>
+     <script src="http://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script>
+     <script type="text/javascript" src="funcs.js"></script>
+     
+     <title>This is the title of the webpage!</title>
+   </head>
+   <body>
+      <div id="title"> 
+     <h1>
+        Build-a-Rack
+     </h1>
+     </div>
+       <div class="row shadow">
+         <div class="columnbig">
+           <div id="figs">
+            
+                 <img id="skileft" class="dark" src="ski.png"/>
+              
+                 <img id="surfleft" class="dark" src="surf.png"/>
+              
+                 <img id="bikeleft" class="dark" src="bike.png"/>
+              
+                 <img id="kayakleft" class="dark" src="kayak.png"/>
+              
+                 <img id="baseleft" class="bright" src="base.png"/>
+   
+           </div>
+         </div>
+         <div class="columnsmall">
+           <h2>
+             Click To Select
+           </h2>
+           <div id = "two">
+            <figure>
+              <img onclick="select(this)" id="skiright" class="dark" src="ski2.png"/>
+              <figcaption> More Info</figcaption>
+             </figure>
+            <figure>
+              <img onclick="select(this)" id="surfright" class="dark" src="surf2.png"/>
+              <figcaption> More Info</figcaption>
+             </figure>
+           </div>
+           <div id = "two">
+            <figure>
+              <img onclick="select(this)" id="bikeright" class="dark" src="http://www.spicysports.com/wp-content/uploads/2015/08/snowbus-logo-square.png"/>
+              <figcaption> More Info</figcaption>
+             </figure>
+            <figure  >
+              <img onclick="select(this)" id="kayakright" class="dark" src="http://www.spicysports.com/wp-content/uploads/2015/08/snowbus-logo-square.png"/>
+              <figcaption> More Info</figcaption>
+             </figure>
+           </div>
+           <figure  >
+              <img onclick="select(this)" id="baseright" class="bright" src="http://www.spicysports.com/wp-content/uploads/2015/08/snowbus-logo-square.png"/>
+              <figcaption> More Info</figcaption>
+           </figure>
+             <div id="checkout" class="button_cont" align="center"><a id="checkoutlink" class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener">Buy Now</a></div>
+          </div>
+     </div>
+    </div>
+  <div class="row lightshadow">
+         <p id="total" class="smalltext">
+             <span style="color:white; font-family: Arial, Helvetica, sans-serif;">Price: </span><span id="price" style="color: red; font-size: 1.5em; font-weight:bold; font-family: Arial, Helvetica, sans-serif;"> $0</span>
+         </p>          
+  </div>
+  </body>
+</html>

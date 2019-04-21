@@ -1,0 +1,155 @@
+.row {
+  display: flex;
+  width: 75%;
+  margin: auto;
+}
+
+.lightshadow{
+  background-color: gray;
+  
+}
+
+#total{
+  text-align: left;
+  flex: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.bigtext{
+  font-size: 1.5em;
+}
+
+.smalltext{
+  margin-left:5px;
+  font-size: .75em
+}
+
+.example_a {
+color: #fff !important;
+text-transform: uppercase;
+background: #ed3330;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+text-decoration: none;
+margin: 2px;
+text-align: right;
+}
+
+.example_a:hover {
+background: #434343;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.4s ease 0s;
+}
+
+#checkout{
+  flex:40%;
+  margin-bottom: 8px;
+}
+
+
+
+.columnbig {
+  flex: 40%;
+}
+
+.columnbig figure {
+  margin: auto;
+  text-align: center;
+  min-height: 120px;
+  vertical-align: middle
+}
+
+.shadow {
+   background-color: gray;
+}
+
+.columnsmall {
+  flex: 40%;
+	position: relative;
+  background-color: black;
+  margin: 10px;
+}
+
+
+.columnbig img {
+  width: 70%;
+  vertical-align: middle;
+  margin-top: 12%;
+
+}
+
+.bright {
+  filter: brightness(100%);
+}
+
+.dark {
+    filter: brightness(10%);
+}
+
+.columnsmall img {
+  height:auto;
+  width: 80%;
+  display: flex;
+  margin: auto;
+}
+
+
+
+.columnsmall figure {
+  margin: 5% 5%;
+}
+
+.columnsmall figcaption {
+  color: red;
+  font-family: Verdana;
+  text-align: center;
+  font-weight: lighter;
+  font-size: 10px;
+}
+
+#baseright{
+  width: 35%;
+}
+
+#two {
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-weight: lighter;
+  color: red;
+  font-family: Verdana;
+  text-align: center;
+}
+
+#figs {
+  text-align: center;
+}
+
+
+.columnsmall:after{
+	content: '';
+	display: block;  
+	position: absolute;
+	right: 100%;
+	top: 50%;
+	margin-top: -30px;
+  
+	width: 0;
+	height: 0;
+	border-top: 30px solid transparent;
+	border-right: 30px solid black;
+	border-bottom: 30px solid transparent;
+	border-left: 30px solid transparent;
+}
+
