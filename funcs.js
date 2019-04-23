@@ -1,7 +1,8 @@
 
 function select(id) {
   var element = null;
-
+  console.log(id.id)
+  checkbox(id);
   if (id.id == "skiright") {
     element = document.getElementById("skileft")
   } else if (id.id == "surfright") {
@@ -10,9 +11,11 @@ function select(id) {
     element = document.getElementById("kayakleft")
   } else if (id.id == "bikeright") {
     element = document.getElementById("bikeleft")
-  } else if (id.id == "baseright") {
-    element = document.getElementById("baseleft")
+  } else if (id.id == "checboxyes" || "checkboxno") {
+    console.log("checkbox")
+    return;
   }
+
 
   console.log(element)
   if (element.className == "dark") {
@@ -23,6 +26,22 @@ function select(id) {
     id.className = "dark"
   }
   updatecart()
+}
+
+function checkbox(id){
+
+  if(id.id == "checkyes")
+  {
+    document.getElementById("checkboxno").checked = false;
+    document.getElementById("baseleft").className = "bright";
+    updatecart();
+  }
+  else if(id.id == "checkno")
+  {
+    document.getElementById("checkboxyes").checked = false;
+    document.getElementById("baseleft").className = "dark";
+    updatecart()
+  }
 }
 
 var productids = [];
@@ -54,6 +73,11 @@ function updatecart() {
       console.log("ski selected")
       addProduct("Ski Attachment")
     }
+
+    if(x[i].id == "baseleft"){
+      console.log("base selected")
+      addProduct("STAG Base")
+    }
   }
   console.log("Cart before add: ", productids, x.length)
   addCart()
@@ -68,17 +92,17 @@ function addCart(){
     additems.push(temp)
   }
   console.log("add items: ", additems)
-  
+
   for(var i = 0; i < productids.length; i++){
     var checkoutProm = client.checkout.create();
     var productProm = client.product.fetchAll();
-    Promise.all([checkoutProm,productProm, additems]).then(([checkout,products,id]) => 
+    Promise.all([checkoutProm,productProm, additems]).then(([checkout,products,id]) =>
      {
        var lineItemsToAdd = [
              {variantId: id, quantity: 1}
            ]
          var checkoutId = checkout.id
-     
+
          client.checkout.addLineItems(checkoutId, additems).then((checkout) => {
              console.log(checkout, checkout.webUrl)
              console.log(checkout.paymentDue)
@@ -101,9 +125,9 @@ var checkoutURL
 var productnames;
 var checkoutid;
 
-Promise.all([checkoutPromise,productPromise]).then(([checkout,products]) => 
+Promise.all([checkoutPromise,productPromise]).then(([checkout,products]) =>
 {
-  
+
   console.log(products)
   productnames = products;
   checkoutid = checkout.id
@@ -112,7 +136,7 @@ Promise.all([checkoutPromise,productPromise]).then(([checkout,products]) =>
       ]
     var checkoutId = checkout.id
 
-    console.log('checkout id: ' + checkoutId)       
+    console.log('checkout id: ' + checkoutId)
     console.log('line items to add: ' + lineItemsToAdd)
 
     client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((checkout) => {
@@ -122,18 +146,9 @@ Promise.all([checkoutPromise,productPromise]).then(([checkout,products]) =>
 })
 
 
+
+
 function addlink(url){
   document.getElementById("checkoutlink").href = url;
 
 }
-
-
-
-
-
-
-
-
-
-
-
